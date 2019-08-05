@@ -1,0 +1,65 @@
+<div id="sidebar" class="column no-side-pad col-xs-12 col-sm-3 col-lg-2 sidebar-offcanvas">
+                <div class="row">
+                    <div class="col-lg-12 no-pad-left no-pad-right">
+                        <div class="navTitle">
+                            <img src="{{profile.profile_picture}}" alt="{{profile.username}}" class="img-responsive">
+                            <li class="list-group-item list-group-item-primary">{{profile.username}}<br><br>{{profile.bio}}</li>               
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-12 no-pad-left no-pad-right">
+                        <button class="btn btn-1">Follow</button><br>
+                        {{#if profile.selfView}}
+                          <br> <button class="btn btn-2">Settings</button>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            <div class="column col-xs-12 col-sm-9 col-lg-10" style="margin:auto" id="main">
+<div class="padding hidden-xs">
+<div class="col-xs-2">
+  <center>
+    <a href="/" class="as-is btn btn-2 active">Profile</a>
+  </center>
+</div>
+<div class="col-xs-2">
+  <center>
+    <a href="/u" class="as-is btn btn-1">Repositories * {{profile.repositories.length}}</a>
+  </center>
+</div>
+<div class="col-xs-2">
+  <center>
+    <a href="/me/upload" class="as-is btn btn-2">Following</a>
+  </center>
+</div>
+<div class="col-xs-2">
+  <center>
+  <a href="/me/activity" class="as-is btn btn-1">Followers * {{profile.followers.length}}</a>
+  </center>
+</div>
+<div class="col-xs-2">
+  <center>
+  <a href="/me" class="as-is btn btn-2">Activity</a>
+  </center>
+</div>
+  </div><br><br><br>
+  <div id="pagination">
+    {{#profile.repos}}
+    <div class="panel panel-info">
+                    <div class="panel-body">
+                        <h2>{{name}}</h2>
+                        <p>
+                            {{description}}
+                        </p>
+                        <div class="float-right">
+                            <a class="btn btn-2" href="/@{{profile.username}}/{{name}}">Star</a>
+                        </div>
+                         <div class="float-left">
+                            <span class="text-muted">{{activity}}</span>
+                        </div>
+                    </div>
+                </div>
+    {{/profile.repos}}
+  </div>
+    </div>

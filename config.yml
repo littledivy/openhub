@@ -1,0 +1,6 @@
+title: OpenHub
+host: localhost
+port: 3000
+db:
+  url: http://localhost:3001
+author: Divy Srivastava <dj.srivastava23@gmail.com>  

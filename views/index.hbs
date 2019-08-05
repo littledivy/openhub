@@ -1,2 +1,96 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+{{#checkUser}}
+    <div class="container">
+    <center>
+        <br><br>
+        <h1 class="skew oneday" id="type-here"></h1>
+        <br><br><br><br>
+        <a href="/portal/new" class="btn btn-1">Get Started</a>
+    </center>
+    </div><br>
+    <div class="container-fluid" style="background-image: linear-gradient(120deg,deepskyblue,#18bc9c)">
+<center>
+        <br><br>
+        <h1 class="skew oneday" id="type-here"></h1>
+        <br><br><br><br>
+        <a href="/portal/new" class="btn btn-1">Get Started</a>
+    </center>
+    </div>
+{{/checkUser}}
+
+{{#if user}}
+    <div id="sidebar" class="column no-side-pad hidden-xs col-xs-12 col-sm-3 col-lg-2 sidebar-offcanvas">
+                <div class="row">
+                    <div class="col-lg-12 no-pad-left no-pad-right">
+                        <div class="navTitle">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 no-pad-left no-pad-right">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary">Repositories</li>
+                                {{#user.repos}}
+                                <li class="list-group-item">
+                                    <i class="fa fa-search"></i>&nbsp;
+                                    <a href="/@{{user.username}}/{{name}}">{{name}}</a>
+                                </li>
+                                {{/user.repos}}
+                                
+                        </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary">Top languages</li>
+                                <li class="list-group-item">
+                                	<i class="fa fa-mug-hot"></i>&nbsp;
+                                	<a href="/lang/javascript">javascript</a>
+                                </li>
+                                <li class="list-group-item">
+                                	<i class="fa fa-guitar"></i>&nbsp;
+                                	<a href="/lang/python">python</a>
+                                </li>
+                                <li class="list-group-item">
+                                	<i class="fa fa-brain"></i>&nbsp;
+                                	<a href="/lang/c++">c++</a>
+                                </li>
+                        </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary">
+                                profile
+                            </li>
+                                <li class="list-group-item">
+                                    <i class="fa fa-images"></i>&nbsp;
+                                    <a href="/@{{user.username}}">my profile</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa fa-cog"></i>&nbsp;
+                                    <a href="/settings/">settings</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa fa-power-off"></i>&nbsp;
+                                    <a href="/portal/out">log out</a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-xs-12 col-sm-9 col-lg-10" style="margin:auto" id="main">
+                <div class="panel panel-info">
+                    <div class="panel-heading">@dan-online starred dan-divy/spruce</div>
+                    <div class="panel-body">
+                        <h2>Spruce</h2>
+                        <p>
+                            An open source social media platform built using Node.js
+                        </p>
+                        <div class="float-right">
+                            <button class="btn btn-2">Star</button>
+                        </div>
+                         <div class="float-left">
+                            <span class="text-muted">Last activity 2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             {{/if}}
+<script src="/javascripts/typeWriter.js"></script>
+<script src="/javascripts/type.js"></script>

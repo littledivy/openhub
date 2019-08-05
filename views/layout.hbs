@@ -2,9 +2,32 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+    <div class="container-fluid top-navbar">
+  <div class="float-left">
+  <h2>
+    OpenHub
+  </h2>
+  </div>
+  <div class="float-right margin-top-20">
+    {{#if user}}
+    <img src="{{user.profile_picture}}"  class="logo pro-pic" alt="@{{user.username}}">
+      <a class="btn btn-2 hidden-xs" href="/@{{user.username}}">@{{user.username}}</a>
+    {{/if}}
+    {{#checkUser}}
+     <a href="/portal/login" class="btn btn-1">
+      Sign in
+    </a>
+    <a href="/portal/new" class="btn btn-2 hidden-xs">
+      Sign up
+    </a>
+    {{/checkUser}}
+  </div>
+</div><br>
     {{{body}}}
   </body>
 </html>
